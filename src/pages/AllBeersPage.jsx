@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 useState
 
@@ -30,10 +31,12 @@ function AllBeersPage() {
             beers.map((beer) => {
                 return (
                 <div>
+                    <Link to={`/beers/${beer._id}`}>
                     <img src={beer.image_url} alt={beer.name} />
                     <p>{beer.name}</p>
                     <p>{beer.tagline}</p>
                     <p>{beer.contributed_by}</p>
+                    </Link>
                 </div>
                 )
             })
